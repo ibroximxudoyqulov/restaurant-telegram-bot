@@ -1,3 +1,17 @@
+import threading
+from flask import Flask
+
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "Бот ишлаяпти!"
+
+def run():
+    app.run(host='0.0.0.0', port=10000)
+
+# Веб-серверни алоҳида оқимда юрғизиш
+threading.Thread(target=run).start()
 import os
 import re
 import random
